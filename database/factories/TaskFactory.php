@@ -21,9 +21,13 @@ class TaskFactory extends Factory
      */
     public function definition()
     {
+        $name = $this->faker->name;
         return [
-            'title'=>$this->faker->colorName,
-            'day_id'=>null,
+            'title'=>$name,
+            'content'=>$this->faker->randomHtml(),
+            'day'=>'satrday',
+             'user_id'=>1,
+             'status'=>'done',
         ];
     }
 }

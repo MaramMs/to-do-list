@@ -12,12 +12,11 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        //\App\Models\User::factory(2)->create();
-        //Day::factory(7)->create();
+    public function run(){
+
         $this->call([
             TasksTableSeeder::class,
         ]);
     }
+
 }

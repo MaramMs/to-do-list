@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Task;
+use Illuminate\Database\Seeder;
 
 class TasksTableSeeder extends Seeder
 {
@@ -14,14 +14,13 @@ class TasksTableSeeder extends Seeder
      */
     public function run()
     {
-        Task::create(
-            [
-              'title'=>'Task title',
-              'content'=>'content of task',
-              'day_id'=>1,
-              'user_id'=>1,
-              'status'=>'done',
-                          ]
-            );
+        // Task::create([
+        //     'title'=>'task title',
+        //     'content'=>'task content',
+        //     'day'=>'satrday',
+        //      'user_id'=>1,
+        //      'status'=>'done',
+        // ]);
+        Task::factory(5)->create();
     }
 }

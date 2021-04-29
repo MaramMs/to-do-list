@@ -13,15 +13,14 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
-        Schema::create('_tasks', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('content')->nullable();
-            $table->foreignId('day_id')->nullable()->constrained('_days','id')->nullonDelete();
-            $table->foreignId('user_id')->nullable()->constrained('users','id')->nullonDelete();
+            $table->text('content');
+            $table->string('day');
             $table->enum('status',['done','draft']);
+            $table->foreignId('user_id')->nullable()->constrained('users','id')->nullOnDelete();
             $table->timestamps();
-
         });
     }
 
@@ -32,6 +31,6 @@ class CreateTasksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_tasks');
+        Schema::dropIfExists('tasks');
     }
 }
